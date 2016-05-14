@@ -1,4 +1,4 @@
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import {LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {provide, enableProdMode} from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
@@ -12,6 +12,6 @@ import {SeedApp} from './app/seed-app';
 bootstrap(SeedApp, [
   HTTP_PROVIDERS,
   ROUTER_PROVIDERS,
-  provide(LocationStrategy, {useClass: HashLocationStrategy})
+  provide(LocationStrategy, {useClass: PathLocationStrategy})
 ])
 .catch(err => console.error(err));
