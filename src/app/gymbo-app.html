@@ -7,7 +7,8 @@
   <a [routerLink]=" ['/Workout Wall'] ">Workout Wall</a>
 </nav>
 <user-info></user-info>
-<sign-in></sign-in>
+<sign-in [authenticated]="auth.authenticated"
+         (signInWithGithub)="signInWithGithub()"></sign-in>
 <sign-out [authenticated]="auth.authenticated"
           (signOut)="signOut()"></sign-out>
 <main>

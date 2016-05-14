@@ -24,11 +24,21 @@ import {UserInfo} from './components/user-info/user-info';
 ])
 export class GymboApp {
 
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService) {
+    console.clear();
+  }
 
   signOut(): void {
     console.log('Signing out');
     this.auth.signOut();
+  }
+
+  signInWithGithub(): void {
+    console.info('signInWithGithub() start!');
+    this.auth.signInWithGithub()
+      .then((data) => {
+        console.info('signInWithGithub() successful!');
+      });
   }
 
 }
