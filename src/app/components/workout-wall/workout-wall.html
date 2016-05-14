@@ -1,1 +1,8 @@
 <h3>Workout Wall Component</h3>
+
+<div>
+  <div *ngFor="let workoutItem of workoutItems$ | async">
+    <workout-item [workoutItem]="workoutItem"
+                  (deleteWorkout)="deleteWorkout(workoutItem)"></workout-item>
+  </div>
+</div>

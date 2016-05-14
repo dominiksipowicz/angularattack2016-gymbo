@@ -57,4 +57,7 @@ export class GymboApp {
     this.workoutService.createWorkout(workoutContent);
   }
 
+  deleteWorkout(): void {
+    console.log('deleteWorkout()');
+  }
 }
