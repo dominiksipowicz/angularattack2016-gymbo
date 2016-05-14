@@ -7,14 +7,16 @@ import {WorkoutWall} from './components/workout-wall/workout-wall';
 
 import {SignIn} from './components/sign-in/sign-in';
 import {SignOut} from './components/sign-out/sign-out';
-import {AuthService} from "./common/services/auth.service";
+import {AuthService} from './common/services/auth.service';
 import {UserInfo} from './components/user-info/user-info';
+import {WorkoutService} from './components/workout/workout.service';
+import {WorkoutComponent} from './components/workout/workout.component';
 
 @Component({
   selector: 'gymbo-app',
-  providers: [AuthService],
+  providers: [AuthService, WorkoutService],
   pipes: [],
-  directives: [ROUTER_DIRECTIVES, SignIn, SignOut, UserInfo],
+  directives: [ROUTER_DIRECTIVES, SignIn, SignOut, UserInfo, WorkoutComponent],
   templateUrl: 'app/gymbo-app.html',
   styles: [`
   .user-wrapper {
@@ -30,7 +32,10 @@ import {UserInfo} from './components/user-info/user-info';
 ])
 export class GymboApp {
 
-  constructor(private auth: AuthService) {
+  constructor(
+    private auth: AuthService,
+    private workoutService: WorkoutService
+  ) {
     console.clear();
   }
 
@@ -45,6 +50,11 @@ export class GymboApp {
       .then((data) => {
         console.info('signInWithGithub() successful!');
       });
+  }
+
+  createWorkout(): void {
+    let workoutContent = 'createWorkout() at: ' + Date.now();
+    this.workoutService.createWorkout(workoutContent);
   }
 
 }

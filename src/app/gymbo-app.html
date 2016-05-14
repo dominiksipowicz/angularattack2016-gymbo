@@ -15,6 +15,9 @@
   <sign-out [authenticated]="auth.authenticated"
             (signOut)="signOut()"></sign-out>
 </div>
+
+<create-workout (createWorkout)="createWorkout()"></create-workout>
+
 <main>
   <router-outlet></router-outlet>
 </main>
