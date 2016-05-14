@@ -4,13 +4,13 @@ import {Http} from '@angular/http';
 
 @Component({
   selector: 'about',
-  templateUrl: 'app/components/about/about.html',
-  styleUrls: ['app/components/about/about.css'],
+  templateUrl: 'app/components/add-workout/add-workout.html',
+  styleUrls: ['app/components/add-workout/add-workout.css'],
   providers: [],
   directives: [],
   pipes: []
 })
-export class About {
+export class AddWorkout {
 
   constructor(http: Http) {
 

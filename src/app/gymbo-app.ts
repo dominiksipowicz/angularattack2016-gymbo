@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 import {Welcome} from './components/welcome/welcome';
-import {About} from './components/about/about';
+import {AddWorkout} from './components/add-workout/add-workout';
 
 @Component({
   selector: 'gymbo-app',
@@ -13,7 +13,7 @@ import {About} from './components/about/about';
 })
 @RouteConfig([
   { path: '/welcome',    component: Welcome,     name: 'Welcome', useAsDefault: true },
-  { path: '/about',      component: About,       name: 'About' },
+  { path: '/add-workout',component: AddWorkout,  name: 'Add Workout' },
 ])
 export class GymboApp {
 
