@@ -32,6 +32,10 @@ export class AuthService {
     return this.authState !== null ? this.authState.github.displayName : '';
   }
 
+  get avatar(): string {
+    return this.authState !== null ? this.authState.github.profileImageURL : '';
+  }
+
   signInWithGithub(): Promise<FirebaseAuthState> {
     return this.auth$.login({
       provider: AuthProviders.Github

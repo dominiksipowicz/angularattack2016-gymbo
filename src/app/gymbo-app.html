@@ -6,7 +6,9 @@
   <a [routerLink]=" ['/Add Workout'] ">Add Workout</a> |
   <a [routerLink]=" ['/Workout Wall'] ">Workout Wall</a>
 </nav>
-
+<sign-in></sign-in>
+<sign-out [authenticated]="auth.authenticated"
+          (signOut)="signOut()"></sign-out>
 <main>
   <router-outlet></router-outlet>
 </main>
