@@ -16,6 +16,12 @@ import {UserInfo} from './components/user-info/user-info';
   pipes: [],
   directives: [ROUTER_DIRECTIVES, SignIn, SignOut, UserInfo],
   templateUrl: 'app/gymbo-app.html',
+  styles: [`
+  .user-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  `]
 })
 @RouteConfig([
   { path: '/welcome',    component: Welcome,     name: 'Welcome', useAsDefault: true },

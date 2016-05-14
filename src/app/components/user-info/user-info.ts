@@ -1,15 +1,13 @@
 /**
  * Created by Marian on 14/05/2016.
  */
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {AuthService} from "../../common/services/auth.service";
 
 @Component({
   selector: 'user-info',
-  providers: [AuthService],
   template: `
-<div class="user-info">
-
+<div class="user-info" *ngIf="authenticated">
   <div class="user-data-cell"><img [src]="auth.avatar" alt="Avatar"></div>
   <div class="user-data-cell">{{ auth.displayName }}</div>
 </div>
@@ -28,5 +26,6 @@ import {AuthService} from "../../common/services/auth.service";
   `]
 })
 export class UserInfo {
-  constructor(private auth: AuthService) {}
+  @Input() authenticated: boolean;
+  @Input() auth: any;
 }

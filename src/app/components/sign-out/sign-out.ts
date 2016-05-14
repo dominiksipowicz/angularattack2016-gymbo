@@ -10,7 +10,7 @@ import {MdButton} from '@angular2-material/button';
 <button md-raised-button
         color="warn"
         (click)="signOut.emit()"
-        [hidden]="!authenticated">Logout</button>
+        *ngIf="authenticated">Logout</button>
   `,
   directives: [MdButton]
 })

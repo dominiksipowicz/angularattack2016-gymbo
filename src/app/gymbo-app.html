@@ -6,11 +6,15 @@
   <a [routerLink]=" ['/Add Workout'] ">Add Workout</a> |
   <a [routerLink]=" ['/Workout Wall'] ">Workout Wall</a>
 </nav>
-<user-info></user-info>
-<sign-in [authenticated]="auth.authenticated"
-         (signInWithGithub)="signInWithGithub()"></sign-in>
-<sign-out [authenticated]="auth.authenticated"
-          (signOut)="signOut()"></sign-out>
+
+<div class="user-wrapper">
+  <user-info [authenticated]="auth.authenticated"
+             [auth]="auth"></user-info>
+  <sign-in [authenticated]="auth.authenticated"
+           (signInWithGithub)="signInWithGithub()"></sign-in>
+  <sign-out [authenticated]="auth.authenticated"
+            (signOut)="signOut()"></sign-out>
+</div>
 <main>
   <router-outlet></router-outlet>
 </main>

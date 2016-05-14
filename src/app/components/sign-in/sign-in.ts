@@ -8,12 +8,11 @@ import {MdButton} from '@angular2-material/button';
   selector: 'sign-in',
   directives: [MdButton],
   template: `
-<h1>Sign in</h1>
 <button md-raised-button
         color="accent"
         (click)="signInWithGithub.emit()"
         type="button"
-        [hidden]="authenticated">Github</button>
+        *ngIf="!authenticated">Github</button>
   `
 })
 export class SignIn {
