@@ -4,12 +4,12 @@ import {provide, enableProdMode} from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
 import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
 
-import {SeedApp} from './app/seed-app';
+import {GymboApp} from './app/gymbo-app';
 
 
 // enableProdMode()
 
-bootstrap(SeedApp, [
+bootstrap(GymboApp, [
   HTTP_PROVIDERS,
   ROUTER_PROVIDERS,
   provide(LocationStrategy, {useClass: PathLocationStrategy})

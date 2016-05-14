@@ -1,21 +1,21 @@
 import {Component} from '@angular/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
-import {Home} from './components/home/home';
+import {Welcome} from './components/welcome/welcome';
 import {About} from './components/about/about';
 
 @Component({
-  selector: 'seed-app',
+  selector: 'gymbo-app',
   providers: [],
   pipes: [],
   directives: [ROUTER_DIRECTIVES],
-  templateUrl: 'app/seed-app.html',
+  templateUrl: 'app/gymbo-app.html',
 })
 @RouteConfig([
-  { path: '/home',       component: Home,        name: 'Home', useAsDefault: true },
+  { path: '/welcome',    component: Welcome,     name: 'Welcome', useAsDefault: true },
   { path: '/about',      component: About,       name: 'About' },
 ])
-export class SeedApp {
+export class GymboApp {
 
   constructor() {}
 
