@@ -9,7 +9,18 @@ import '@angular/router-deprecated';
 
 
 // RxJS 5
-// import 'rxjs/Rx';
+import 'rxjs/Rx';
+// @ngrx/store
+import '@ngrx/store'
+// Firebase
+import 'firebase';
+import 'angularfire2'
+// Material 2
+import '@angular2-material/core';
+import '@angular2-material/button';
+import '@angular2-material/input';
+import '@angular2-material/radio';
+import '@angular2-material/icon';
 
 
 // For vendors for example jQuery, Lodash, angular2-jwt import them here
