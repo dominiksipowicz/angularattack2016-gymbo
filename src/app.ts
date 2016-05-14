@@ -7,10 +7,26 @@ import {FIREBASE_PROVIDERS, defaultFirebase, firebaseAuthConfig, AuthMethods} fr
 
 import {GymboApp} from './app/gymbo-app';
 
+import {provideStore} from '@ngrx/store';
+import {options} from 'app/common/reducers/options.reducer.ts';
 
 // enableProdMode()
 
 bootstrap(GymboApp, [
+  provideStore({options}, {options: [{
+    label: 'Muscle Groups',
+    controlType: 'select',
+    key: 'muscleGroups',
+    options: [
+      {key:'back', value:'Back'},
+      {key:'chest', value:'Chest'},
+      {key:'arms', value:'Arms'},
+      {key:'legs', value:'Legs'},
+      {key:'shoulders', value:'Shoulders'},
+      {key:'cardio', value:'Cardio'},
+      {key:'core', value:'Core'}
+    ]
+  }]}),
   HTTP_PROVIDERS,
   ROUTER_PROVIDERS,
   provide(LocationStrategy, {useClass: PathLocationStrategy}),

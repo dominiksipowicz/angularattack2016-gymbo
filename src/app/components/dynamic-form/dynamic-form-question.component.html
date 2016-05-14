@@ -1,5 +1,4 @@
 <div [ngFormModel]="form">
-  <label [attr.for]="question.key">{{question.label}}</label>
   <div [ngSwitch]="question.controlType">
     <md-input *ngSwitchWhen="'textbox'" [ngControl]="question.key"
               [id]="question.key" [type]="question.type"></md-input>

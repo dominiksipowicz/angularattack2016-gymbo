@@ -4,6 +4,11 @@ import { TextboxQuestion }  from '../dynamic-form/questions/textbox-question';
 import { SelectQuestion } from "../dynamic-form/questions/select-question";
 import {WorkoutService} from '../workout/workout.service';
 
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import {Store} from '@ngrx/store';
+import {CHANGE_GROUP, CHANGE_EXERCISE} from '../../common/reducers/options.reducer';
+
 @Component({
   selector: 'about',
   templateUrl: 'app/components/add-workout/add-workout.html',
@@ -13,10 +18,17 @@ import {WorkoutService} from '../workout/workout.service';
   pipes: []
 })
 export class AddWorkout {
-  workoutData:{}[];
-  questions:any[];
+  workoutData:[{}];
+  questions:[{}];
+  // options: Observable<[]>;
+  options: any;
 
-  constructor(private workoutService: WorkoutService) {
+  constructor(private workoutService: WorkoutService, public store: Store<[{}]>) {
+    let options$ = store.select('options');
+    options$.subscribe((value) => {
+      this.options = value;
+    });
+
     this.workoutData = [
       {
         key:'back',
