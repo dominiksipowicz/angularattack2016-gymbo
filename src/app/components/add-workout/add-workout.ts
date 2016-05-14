@@ -16,16 +16,18 @@ export class AddWorkout {
   constructor() {
     this.questions = [
       new TextboxQuestion({
-        key:'firstName',
-        label:'First name',
-        value:'Bombasto',
+        key:'sets',
+        label:'Number of sets:',
+        type: 'number',
+        value:'6',
         required: true,
         order: 1
       }),
       new TextboxQuestion({
-        key:'emailAddress',
-        label:'Email',
-        type: 'email',
+        key:'reps',
+        label:'Number of reps:',
+        type: 'number',
+        required: true,
         order: 2
       })
     ]

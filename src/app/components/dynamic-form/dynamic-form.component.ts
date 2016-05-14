@@ -3,10 +3,12 @@ import { ControlGroup }              from '@angular/common';
 import { QuestionBase }                 from './questions/question-base';
 import { QuestionControlService }       from '../../common/services/question-control.service';
 import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
+import {MdButton} from '@angular2-material/button';
+
 @Component({
   selector:'dynamic-form',
   templateUrl:'app/components/dynamic-form/dynamic-form.component.html',
-  directives: [DynamicFormQuestionComponent],
+  directives: [DynamicFormQuestionComponent, MdButton],
   providers:  [QuestionControlService]
 })
 export class DynamicForm {
