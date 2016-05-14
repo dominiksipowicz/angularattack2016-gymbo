@@ -9,7 +9,8 @@
     "watch": "npm run build -- --watch",
     "server": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
     "start": "npm run server",
-    "clean": "m -rf app && rm -f *.map && rm favicon.ico && rm index.html"
+    "clean": "rm -rf app && rm -f *.map && rm favicon.ico && rm index.html",
+    "deploy": "surge ."
   },
   "contributors": [
     "Rob Wormald <robwormald@gmail.com>",
