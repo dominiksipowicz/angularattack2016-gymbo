@@ -3,6 +3,7 @@ import {Router, RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated
 
 import {Welcome} from './components/welcome/welcome';
 import {AddWorkout} from './components/add-workout/add-workout';
+import {WorkoutWall} from './components/workout-wall/workout-wall';
 
 @Component({
   selector: 'gymbo-app',
@@ -14,6 +15,7 @@ import {AddWorkout} from './components/add-workout/add-workout';
 @RouteConfig([
   { path: '/welcome',    component: Welcome,     name: 'Welcome', useAsDefault: true },
   { path: '/add-workout',component: AddWorkout,  name: 'Add Workout' },
+  { path: '/workout-wall',component: WorkoutWall,  name: 'Workout Wall' }
 ])
 export class GymboApp {
 
