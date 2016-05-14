@@ -2,19 +2,20 @@ import {Component} from '@angular/core';
 import { DynamicForm } from '../dynamic-form/dynamic-form.component';
 import { TextboxQuestion }  from '../dynamic-form/questions/textbox-question';
 import { SelectQuestion } from "../dynamic-form/questions/select-question";
+import {WorkoutService} from '../workout/workout.service';
 
 @Component({
   selector: 'about',
   templateUrl: 'app/components/add-workout/add-workout.html',
   styleUrls: ['app/components/add-workout/add-workout.css'],
-  providers: [],
+  providers: [WorkoutService],
   directives: [DynamicForm],
   pipes: []
 })
 export class AddWorkout {
   questions:any[];
 
-  constructor() {
+  constructor(private workoutService: WorkoutService) {
     this.questions = [
       new SelectQuestion({
         key:'muscle',
@@ -25,6 +26,7 @@ export class AddWorkout {
           {key:'arms',   value:'Arms'},
           {key:'legs',value:'Legs'}
         ],
+        value: 'back',
         required: true,
         order: 1
       }),
@@ -37,6 +39,7 @@ export class AddWorkout {
           {key:'arms',  value:'Arms'},
           {key:'legs',  value:'Legs'}
         ],
+        value: 'legs',
         required: true,
         order: 2
       }),
@@ -44,6 +47,7 @@ export class AddWorkout {
         key:'sets',
         label:'Number of sets:',
         type: 'number',
+        value: 6,
         required: true,
         order: 3
       }),
@@ -51,10 +55,16 @@ export class AddWorkout {
         key:'reps',
         label:'Number of reps:',
         type: 'number',
+        value: 4,
         required: true,
         order: 4
       })
     ]
+  }
+
+  createWorkout(): void {
+    let workoutContent = 'createWorkout() at: ' + Date.now();
+    this.workoutService.createWorkout(workoutContent);
   }
 
   ngOnInit() {

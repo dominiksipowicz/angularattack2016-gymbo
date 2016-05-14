@@ -11,7 +11,7 @@ import {MdButton} from '@angular2-material/button';
 <button md-raised-button
         (click)="createWorkout.emit()">Create workout</button>
   `
-})
+})                                        
 export class WorkoutComponent {
   @Output() createWorkout: EventEmitter<any> = new EventEmitter(false);
 }
