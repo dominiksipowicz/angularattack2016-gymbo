@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+//var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 // Webpack Config
@@ -17,20 +17,20 @@ var webpackConfig = {
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'], minChunks: Infinity }),
-    new CopyWebpackPlugin([
-      {
-        context: 'src',
-        from: '**/*.html',
-      },
-      {
-        context: 'src',
-        from: '**/*.css',
-      },
-      {
-        context: 'src',
-        from: '**/*.ico',
-      },
-    ])
+    //new CopyWebpackPlugin([
+    //  {
+    //    context: 'src',
+    //    from: '**/*.html',
+    //  },
+    //  {
+    //    context: 'src',
+    //    from: '**/*.css',
+    //  },
+    //  {
+    //    context: 'src',
+    //    from: '**/*.ico',
+    //  },
+    //])
   ],
 
   module: {

@@ -9,7 +9,7 @@
     "watch": "npm run build -- --watch",
     "server": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
     "start": "npm run server",
-    "clean": "rm -rf app && rm -f *.map && rm favicon.ico && rm index.html",
+    "clean": "rm -rf app && rm -f *.map && rm -f favicon.ico && rm -f index.html",
     "deploy": "surge ."
   },
   "contributors": [
