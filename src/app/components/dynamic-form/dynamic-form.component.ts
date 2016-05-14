@@ -21,7 +21,7 @@ export class DynamicForm {
     this.form = this.qcs.toControlGroup(this.questions);
   }
   onSubmit() {
-    this.createWorkout.emit(false);
+    this.createWorkout.emit(this.form.value);
     this.payLoad = JSON.stringify(this.form.value);
   }
 }
