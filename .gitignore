@@ -3,3 +3,12 @@
 /npm-debug.log
 /typings/
 .idea/
+/app/
+app.bundle.js
+app.map
+favicon.ico
+index.html
+polyfills.bundle.js
+polyfills.map
+vendor.bundle.js
+vendor.map

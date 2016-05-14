@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 // Webpack Config
@@ -11,11 +12,25 @@ var webpackConfig = {
   },
 
   output: {
-    path: './dist',
+    path: '.', // should be "./dist" but I don't want to change deployment command surge .
   },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'], minChunks: Infinity }),
+    new CopyWebpackPlugin([
+      {
+        context: 'src',
+        from: '**/*.html',
+      },
+      {
+        context: 'src',
+        from: '**/*.css',
+      },
+      {
+        context: 'src',
+        from: '**/*.ico',
+      },
+    ])
   ],
 
   module: {
