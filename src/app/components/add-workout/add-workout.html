@@ -1,2 +1,2 @@
 <h3>Add Your Workout</h3>
-<dynamic-form [questions]="questions"></dynamic-form>
+<dynamic-form [questions]="questions" (createWorkout)="createWorkout($event, value)"></dynamic-form>

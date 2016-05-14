@@ -10,13 +10,12 @@ import {SignOut} from './components/sign-out/sign-out';
 import {AuthService} from './common/services/auth.service';
 import {UserInfo} from './components/user-info/user-info';
 import {WorkoutService} from './components/workout/workout.service';
-import {WorkoutComponent} from './components/workout/workout.component';
 
 @Component({
   selector: 'gymbo-app',
   providers: [AuthService, WorkoutService],
   pipes: [],
-  directives: [ROUTER_DIRECTIVES, SignIn, SignOut, UserInfo, WorkoutComponent],
+  directives: [ROUTER_DIRECTIVES, SignIn, SignOut, UserInfo],
   templateUrl: 'app/gymbo-app.html',
   styles: [`
   .user-wrapper {
@@ -26,9 +25,9 @@ import {WorkoutComponent} from './components/workout/workout.component';
   `]
 })
 @RouteConfig([
-  { path: '/welcome',    component: Welcome,     name: 'Welcome', useAsDefault: true },
-  { path: '/add-workout',component: AddWorkout,  name: 'Add Workout' },
-  { path: '/workout-wall',component: WorkoutWall,  name: 'Workout Wall' }
+  { path: '/welcome',     component: Welcome,     name: 'Welcome', useAsDefault: true },
+  { path: '/add-workout', component: AddWorkout,  name: 'Add Workout' },
+  { path: '/workout-wall',component: WorkoutWall, name: 'Workout Wall' }
 ])
 export class GymboApp {
 
@@ -50,11 +49,6 @@ export class GymboApp {
       .then((data) => {
         console.info('signInWithGithub() successful!');
       });
-  }
-
-  createWorkout(): void {
-    let workoutContent = 'createWorkout() at: ' + Date.now();
-    this.workoutService.createWorkout(workoutContent);
   }
 
   deleteWorkout(): void {
