@@ -1,0 +1,17 @@
+.flex {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.head {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+}

@@ -1,4 +1,19 @@
-<h1>Gymbo</h1>
+<div class="flex">
+
+  <div class="head">
+    <h1>Gymbo</h1>
+  </div>
+
+  <div class="user-wrapper">
+    <user-info [authenticated]="auth.authenticated"
+               [auth]="auth"></user-info>
+    <sign-in [authenticated]="auth.authenticated"
+             (signInWithGithub)="signInWithGithub()"></sign-in>
+    <sign-out [authenticated]="auth.authenticated"
+              (signOut)="signOut()"></sign-out>
+  </div>
+</div>
+
 <h2>Workout Progress Sharing Application</h2>
 
 <nav>
@@ -7,14 +22,6 @@
   <a [routerLink]=" ['/Workout Wall'] ">Workout Wall</a>
 </nav>
 
-<div class="user-wrapper">
-  <user-info [authenticated]="auth.authenticated"
-             [auth]="auth"></user-info>
-  <sign-in [authenticated]="auth.authenticated"
-           (signInWithGithub)="signInWithGithub()"></sign-in>
-  <sign-out [authenticated]="auth.authenticated"
-            (signOut)="signOut()"></sign-out>
-</div>
 
 <!--<create-workout (createWorkout)="createWorkout()"></create-workout>-->
 

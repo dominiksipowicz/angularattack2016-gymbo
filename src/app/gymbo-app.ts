@@ -17,12 +17,7 @@ import {WorkoutService} from './components/workout/workout.service';
   pipes: [],
   directives: [ROUTER_DIRECTIVES, SignIn, SignOut, UserInfo],
   templateUrl: 'app/gymbo-app.html',
-  styles: [`
-  .user-wrapper {
-    display: flex;
-    align-items: center;
-  }
-  `]
+  styleUrls: ['app/gymbo-app.css']
 })
 @RouteConfig([
   { path: '/welcome',     component: Welcome,     name: 'Welcome', useAsDefault: true },
