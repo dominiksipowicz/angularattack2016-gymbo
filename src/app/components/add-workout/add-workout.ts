@@ -7,7 +7,7 @@ import {WorkoutService} from '../workout/workout.service';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import {Store} from '@ngrx/store';
-import {CHANGE_GROUP, CHANGE_EXERCISE} from '../../common/reducers/options.reducer';
+import {CHANGE_GROUP} from '../../common/reducers/options.reducer';
 
 @Component({
   selector: 'about',

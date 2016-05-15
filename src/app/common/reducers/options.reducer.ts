@@ -244,23 +244,6 @@ export const options:Reducer<{}[]> = (state:[{}], {type, payload}) => {
         ]
       }
 
-    return [new SelectQuestion ({
-      label: 'Muscle Groups',
-      controlType: 'select',
-      key: 'muscleGroups',
-      required: true,
-      value: payload,
-      options: [
-        {key:'back', value:'Back'},
-        {key:'chest', value:'Chest'},
-        {key:'arms', value:'Arms'},
-        {key:'legs', value:'Legs'},
-        {key:'shoulders', value:'Shoulders'},
-        {key:'cardio', value:'Cardio'},
-        {key:'core', value:'Core'}
-      ]
-    }), exercisesSelect];
-
     case ADD_NEW_WORKOUT:
       return [
         new SelectQuestion ({

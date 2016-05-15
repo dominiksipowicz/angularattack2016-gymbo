@@ -23,9 +23,8 @@ export class DynamicForm {
   options: Observable<{}>;
   constructor(private qcs: QuestionControlService, public store: Store<[{}]>) {
     let options$ = store.select('options');
-    options$.subscribe((value) => {
-      this.options = value;
-      this.form = this.qcs.toControlGroup(this.options);
+    options$.subscribe((value:QuestionBase<any>[]) => {
+      this.form = this.qcs.toControlGroup(value);
     });
   }
   changeGroup(){
