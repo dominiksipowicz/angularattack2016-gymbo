@@ -5,7 +5,16 @@
                 <h1 class="mdl-card__title-text">Workout tracker</h1>
             </div>
             <div class="mdl-card__supporting-text">
-                This app was created to satisfy people that want to record their workouts and share results with geek-friends. Yes... Only geek, becuse to use this app you need to have <a href="http://www.github.com">GitHub</a> account.
+                This app was created to satisfy people that want to record their workouts and share
+                results with geek-friends. Yes... Only geek, becuse to use this app you need to have
+                <a href="http://www.github.com">GitHub</a> account to log in.<br>
+                <br>
+                Imagine you are on the gym, and as on standard usual day you want to record your progress.
+                You do it for yourself. But... Your friends sitting on the couch and watching TV. In the same time you
+                add your workout they can see that you work hard looking after your healthy lifestyle. They might think
+                that if others are on gym they should also try to be more active.<br>
+                <br>
+                Eventually - <strong>you will help people with this app!</strong>
             </div>
             <div class="mdl-card__menu welcome-button">
                 <button class=" mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
@@ -16,19 +25,24 @@
     </div>
     <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet">
         <div class="welcome demo-card-wide mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title">
-                <h1 class="mdl-card__title-text">Add workout</h1>
+            <div class="mdl-card__title" [ngSwitch]="auth.authenticated">
+                <h1 *ngSwitchWhen="true" class="mdl-card__title-text">Add workout</h1>
+                <h1 *ngSwitchWhen="false" class="mdl-card__title-text">Login using GitHub</h1>
             </div>
             <div class="mdl-card__supporting-text">
-                Add your workout while you are on gym. Record the type of workout day with reps & sets.
+                Add your workout while you are on gym so your friends can see it in <strong>real-time</strong>.<br>
+                <br>
+                Record the type of workout day (muscle part), exercise type, how many reps & sets with weight.
             </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <button [routerLink]=" ['Private', 'Add Workout'] "
+            <div class="mdl-card__actions mdl-card--border" [ngSwitch]="auth.authenticated">
+                <button *ngSwitchWhen="true" [routerLink]=" ['Private', 'Add Workout'] "
                         class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 
                     <i class="material-icons">add</i>
                     Record your workout
                 </button>
+                <sign-in *ngSwitchWhen="false" [authenticated]="auth.authenticated"
+                         (signInWithGithub)="signInWithGithub()"></sign-in>
             </div>
         </div>
     </div>
