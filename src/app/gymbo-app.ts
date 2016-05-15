@@ -23,8 +23,6 @@ import {WorkoutCounter} from "./components/workout/workout.counter";
 })
 @RouteConfig([
   { path: '/welcome',     component: Welcome,          name: 'Welcome', useAsDefault: true },
-  { path: '/add-workout', component: AddWorkout,       name: 'Add Workout' },
-  { path: '/workout-wall',component: WorkoutWall,      name: 'Workout Wall' },
   { path: '/...'         ,component: PrivateComponent, name: 'Private' }
 ])
 export class GymboApp {

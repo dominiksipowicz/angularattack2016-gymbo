@@ -8,9 +8,11 @@ import {IWorkout, Workout} from "./workout";
 @Injectable()
 export class WorkoutService {
   workoutItems$:FirebaseListObservable<IWorkout[]>;
+  exerciseItems$:FirebaseListObservable<any[]>;
 
   constructor(af:AngularFire) {
     this.workoutItems$ = af.list('/workouts') as FirebaseListObservable < IWorkout[] >;
+    this.exerciseItems$ = af.list('/exercises') as FirebaseListObservable <any[]>;
   }
 
   createWorkout(content: string): Promise<any> {
