@@ -22,7 +22,7 @@ import {WorkoutCounter} from "./components/workout/workout.counter";
   styleUrls: ['app/gymbo-app.css']
 })
 @RouteConfig([
-  { path: '/welcome',     component: Welcome,          name: 'Welcome', useAsDefault: true },
+  { path: '/welcome',     component: Welcome,          name: 'Welcome' },
   { path: '/workout-wall',component: WorkoutWall,      name: 'Workout Wall' },
   { path: '/...'         ,component: PrivateComponent, name: 'Private' }
 ])
@@ -35,6 +35,10 @@ export class GymboApp {
     private workoutCounter: WorkoutCounter
   ) {
     console.clear();
+  }
+
+  ngOnInit() {
+    this.router.navigate(['Welcome']);
   }
 
   signOut(): void {
