@@ -7,11 +7,12 @@
                    [submitted]="submitted"></df-question>
     </div>
     <br>
+    <div *ngIf="payLoad" class="form-row">
+      <strong>Your workout has been saved successfully!</strong>
+      <!--<strong>Saved the following values</strong><br>{{payLoad}}-->
+    </div>
     <div class="form-row">
       <button md-raised-button color="warn" type="submit">Publish</button>
     </div>
   </form>
-  <!--<div *ngIf="payLoad" class="form-row">
-    <strong>Saved the following values</strong><br>{{payLoad}}
-  </div>-->
 </div>

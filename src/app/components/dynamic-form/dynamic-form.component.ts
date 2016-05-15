@@ -12,6 +12,7 @@ import {CHANGE_GROUP, ADD_NEW_WORKOUT} from '../../common/reducers/options.reduc
 @Component({
   selector:'dynamic-form',
   templateUrl:'app/components/dynamic-form/dynamic-form.component.html',
+  styleUrls:['app/components/dynamic-form/dynamic-form.component.css'],
   directives: [DynamicFormQuestionComponent, MdButton],
   providers:  [QuestionControlService]
 })
@@ -44,6 +45,7 @@ export class DynamicForm {
       muscleGroup === 'arms' ||
       muscleGroup === 'back'
     ) {
+      this.payLoad = '';
       this.store.dispatch({ type: CHANGE_GROUP, payload: muscleGroup });
     }
   }
