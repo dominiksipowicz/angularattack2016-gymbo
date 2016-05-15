@@ -1,43 +1,48 @@
-<div class="flex">
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Gymbo</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation ">
+        <span class="mdl-badge mdl-badge--overlap mdl-layout--large-screen-only" data-badge="1"></span>
+        <a class="mdl-navigation__link" [routerLink]=" ['/Workout Wall'] " href="#">Workout wall</a>
+      </nav>
 
-  <div class="head">
-    <h1>Gymbo</h1>
-  </div>
 
-  <div class="user-wrapper">
-    <user-info [authenticated]="auth.authenticated"
-               [auth]="auth"></user-info>
-    <sign-in [authenticated]="auth.authenticated"
-             (signInWithGithub)="signInWithGithub()"></sign-in>
-    <sign-out [authenticated]="auth.authenticated"
-              (signOut)="signOut()"></sign-out>
+      <div class="user-wrapper">
+        <user-info class="mdl-layout--large-screen-only" [authenticated]="auth.authenticated"
+                   [auth]="auth"></user-info>
+        <sign-in [authenticated]="auth.authenticated"
+                 (signInWithGithub)="signInWithGithub()"></sign-in>
+        <sign-out [authenticated]="auth.authenticated"
+                  (signOut)="signOut()"></sign-out>
+      </div>
+
+
+
+      </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Gymbo</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" [routerLink]=" ['/Welcome'] " href="#">Home</a>
+      <a class="mdl-navigation__link" [routerLink]=" ['/Add Workout'] " href="#">Add Workout</a>
+      <a class="mdl-navigation__link" [routerLink]=" ['/Workout Wall'] " href="#">Workout Wall</a>
+
+    </nav>
   </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+
+
+    </div>
+  </main>
 </div>
-
-<h2>Workout Progress Sharing Application</h2>
-
-<nav>
-  <a [routerLink]=" ['/Welcome'] ">Welcome</a> |
-  <a [routerLink]=" ['/Add Workout'] ">Add Workout</a> |
-  <a [routerLink]=" ['/Workout Wall'] ">Workout Wall</a>
-</nav>
-
-
-<!--<create-workout (createWorkout)="createWorkout()"></create-workout>-->
-
-<main>
-  <router-outlet></router-outlet>
-</main>
-
-<footer>
-  <p>
-    Credits:
-    <a href="https://github.com/angular/angular2-seed.git" target="_blank">Angular2 Seed</a>
-    <a href="https://github.com/angular/angularfire2" target="_blank">AngularFire2</a>
-    <a href="https://github.com/ngrx/store" target="_blank">@ngrx/store</a>
-    <a href="https://github.com/angular/material2.git" target="_blank">Material2</a>
-    <a href="https://angular.io/docs/ts/latest/cookbook/dynamic-form.html" target="_blank">Dynamic Form</a>
-    <a href="https://codepen.io/pudgereyem/pen/PqBxQx" target="_blank">Material Select Css</a>
-  </p>
-  Gymbo © 2016
-</footer>
