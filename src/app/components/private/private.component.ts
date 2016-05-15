@@ -1,5 +1,5 @@
 /**
- * Created by Marian on 15/05/2016.
+ * Created by Marian on 15/05/2016. So true
  */
 import {Component} from '@angular/core';
 import {Router, ROUTER_DIRECTIVES, RouteConfig} from '@angular/router-deprecated';
