@@ -8,6 +8,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import {Store} from '@ngrx/store';
 import {CHANGE_GROUP} from '../../common/reducers/options.reducer';
+import {AuthService} from "../../common/services/auth.service";
 
 @Component({
   selector: 'about',
@@ -23,14 +24,22 @@ export class AddWorkout {
   // options: Observable<[{}]>;
   options: any;
 
-  constructor(private workoutService: WorkoutService, public store: Store<[{}]>) {
+  constructor(
+    private workoutService: WorkoutService,
+    private auth: AuthService,
+    public store: Store<[{}]>
+  ) {
     let options$ = store.select('options');
     options$.subscribe((value) => { this.options = value; });
   }
 
   createWorkout(content): void {
     // let workoutContent = 'createWorkout() at: ' + Date.now();
-    this.workoutService.createWorkout(content);
+    let user = {
+      avatar: this.auth.avatar,
+      displayName: this.auth.displayName
+    };
+    this.workoutService.createWorkout(content, user);
   }
 
   ngOnInit() {
