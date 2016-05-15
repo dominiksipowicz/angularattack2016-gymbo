@@ -2,13 +2,19 @@ select {
   font-family: inherit;
   background-color: transparent;
   width: 100%;
-  padding: 4px 0;
   font-size: 14px;
   line-height: 18px;
   color: rgba(0, 0, 0, 0.32);
   border: none;
   height: 30px;
+  margin-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.32);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-left: 0;
+  border-radius: 0;
+  margin-top: 10px;
 }
 select:hover { cursor: pointer; }
 select:focus { outline: none }
