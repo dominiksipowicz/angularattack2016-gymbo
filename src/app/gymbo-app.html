@@ -8,7 +8,7 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation ">
-        <span class="mdl-badge mdl-badge--overlap mdl-layout--large-screen-only" [attr.data-badge]="workoutCounter.workoutCount"></span>
+        <span class="mdl-badge mdl-badge--overlap mdl-layout--large-screen-only" [(attr.data-badge)]="workoutCounter.workoutCount"></span>
         <a class="mdl-navigation__link" [routerLink]=" ['Private', 'Workout Wall'] " href="#">Workout wall</a>
       </nav>
 
