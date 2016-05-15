@@ -38,7 +38,7 @@ export class GymboApp {
   }
 
   ngOnInit() {
-    this.router.navigate(['Welcome']);
+    this.router.navigate(['/Welcome']);
   }
 
   signOut(): void {
