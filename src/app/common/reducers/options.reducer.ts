@@ -162,10 +162,7 @@ let exercises = [
   }
 ];
 
-// export const options:Reducer<[{}]> = (state:[{}], action:Action) => {
 export const options:Reducer<{}[]> = (state:[{}], {type, payload}) => {
-  // console.log('state: ', state);
-  //   state.filter(value => value.key === 'muscleGroups').map(value => console.log(value)));
   switch (type) {
     case CHANGE_GROUP:
 

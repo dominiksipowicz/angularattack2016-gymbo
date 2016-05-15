@@ -1,2 +1,15 @@
-<h3>Add Your Workout</h3>
-<dynamic-form [questions]="options" (createWorkout)="createWorkout($event, value)"></dynamic-form>
+<div class="mdl-grid flex">
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet">
+
+    <div class="welcome demo-card-wide mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <h1 class="mdl-card__title-text">Add Your Workout</h1>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <dynamic-form [questions]="options" (createWorkout)="createWorkout($event, value)"></dynamic-form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
