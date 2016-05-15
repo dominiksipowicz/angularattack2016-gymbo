@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
-//var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 
 // Webpack Config
@@ -12,25 +13,35 @@ var webpackConfig = {
   },
 
   output: {
-    path: '.', // should be "./dist" but I don't want to change deployment command surge .
+    path: 'dist'
+  },
+
+  devServer: {
+    // This is required for webpack-dev-server if using a version <3.0.0.
+    // The path should be an absolute path to your build destination.
+    outputPath: path.join(__dirname, 'dist')
   },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'], minChunks: Infinity }),
-    //new CopyWebpackPlugin([
-    //  {
-    //    context: 'src',
-    //    from: '**/*.html',
-    //  },
-    //  {
-    //    context: 'src',
-    //    from: '**/*.css',
-    //  },
-    //  {
-    //    context: 'src',
-    //    from: '**/*.ico',
-    //  },
-    //])
+    new CopyWebpackPlugin([
+      {
+        context: 'src',
+        from: '**/*.html'
+      },
+      {
+        context: 'src',
+        from: '**/*.css'
+      },
+      {
+        context: 'src',
+        from: '**/*.ico'
+      },
+      {
+        context: '',
+        from: '**CNAME**'
+      }
+    ])
   ],
 
   module: {
