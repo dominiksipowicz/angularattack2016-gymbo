@@ -14,6 +14,7 @@ import {MdRadioButton, MdRadioGroup, MdRadioDispatcher} from '@angular2-material
 export class DynamicFormQuestionComponent {
   @Input() question:QuestionBase<any>;
   @Input() form:ControlGroup;
+  @Input() submitted:boolean;
   @Output() changeTo:EventEmitter<any> = new EventEmitter();
   get isValid() { return this.form.controls[this.question.key].valid; }
 }
