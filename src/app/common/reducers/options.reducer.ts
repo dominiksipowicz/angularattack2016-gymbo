@@ -236,6 +236,13 @@ export const options:Reducer<{}[]> = (state:[{}], {type, payload}) => {
             type: 'number',
             required: true,
             order: 4
+          }),
+          new TextboxQuestion({
+            key:'weight',
+            label:'Weight:',
+            type: 'number',
+            required: true,
+            order: 5
           })
         ]
       }
