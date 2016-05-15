@@ -17,26 +17,29 @@ import {Injectable} from "@angular/core";
     md-card-title {
       padding: 15px;
     }
-  `],
+  `,
+  ],
   template: `
     <md-card>
 
       <md-card-header>
-          <img md-card-avatar [src]="auth.avatar">
-          <md-card-title>{{ auth.displayName }}</md-card-title>
+          <img md-card-avatar [src]="workoutItem.user.avatar">
+          <md-card-title>{{ workoutItem.user.displayName }}</md-card-title>
+          <!--<md-card-subtitle></md-card-subtitle>-->
       </md-card-header>
 
       <md-card-content>
-        <div>Content: {{ workoutItem.content.exercises }}</div>
-        <div>Muscle Groups: {{ workoutItem.content.muscleGroups }}</div>
+        <div>Exercise: {{ workoutItem.content.exercises }}</div>
+        <div>Muscle Group: {{ workoutItem.content.muscleGroups }}</div>
         <div>Reps: {{ workoutItem.content.reps }}</div>
         <div>Sets: {{ workoutItem.content.sets }}</div>
         <div>Weight: {{ workoutItem.content.weight }}</div>
-        <div>Key: {{ workoutItem.$key }}</div>
+        <div>Date: {{ workoutItem.createdAt | date }}</div>
       </md-card-content>
 
       <md-card-actions layout="row" layout-align="end center">
           <button md-raised-button color="warn" (click)="deleteWorkout.emit(workoutItem)">Delete</button>
+          <button md-raised-button>Details</button>
       </md-card-actions>
 
     </md-card>
