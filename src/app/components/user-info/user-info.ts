@@ -15,6 +15,7 @@ import {AuthService} from "../../common/services/auth.service";
   styles: [`
   img {
     width: 40px;
+    border-radius: 50%;
   }
   .user-data-cell {
     padding: 5px;
