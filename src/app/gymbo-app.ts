@@ -11,10 +11,11 @@ import {AuthService} from './common/services/auth.service';
 import {UserInfo} from './components/user-info/user-info';
 import {WorkoutService} from './components/workout/workout.service';
 import {PrivateComponent} from "./components/private/private.component";
+import {WorkoutCounter} from "./components/workout/workout.counter";
 
 @Component({
   selector: 'gymbo-app',
-  providers: [AuthService, WorkoutService],
+  providers: [AuthService, WorkoutService, WorkoutCounter],
   pipes: [],
   directives: [ROUTER_DIRECTIVES, SignIn, SignOut, UserInfo],
   templateUrl: 'app/gymbo-app.html',
@@ -29,7 +30,8 @@ export class GymboApp {
   constructor(
     private auth: AuthService,
     private workoutService: WorkoutService,
-    private router: Router
+    private router: Router,
+    private workoutCounter: WorkoutCounter
   ) {
     console.clear();
   }
