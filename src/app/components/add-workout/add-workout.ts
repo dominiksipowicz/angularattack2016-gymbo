@@ -20,14 +20,12 @@ import {CHANGE_GROUP, CHANGE_EXERCISE} from '../../common/reducers/options.reduc
 export class AddWorkout {
   workoutData:[{}];
   questions:[{}];
-  // options: Observable<[]>;
+  // options: Observable<[{}]>;
   options: any;
 
   constructor(private workoutService: WorkoutService, public store: Store<[{}]>) {
     let options$ = store.select('options');
-    options$.subscribe((value) => {
-      this.options = value;
-    });
+    options$.subscribe((value) => { this.options = value; });
 
     this.workoutData = [
       {

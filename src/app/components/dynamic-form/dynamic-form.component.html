@@ -1,7 +1,8 @@
+{{questions | json}}
 <div>
   <form (ngSubmit)="onSubmit()" [ngFormModel]="form">
     <div *ngFor="let question of questions" class="form-row">
-      <df-question [question]="question" [form]="form"></df-question>
+      <df-question [question]="question" (changeTo)="changeMuscleGroups($event)" [form]="form"></df-question>
     </div>
     <div class="form-row">
       <button md-raised-button color="primary" type="submit" [disabled]="!form.valid">Save</button>
