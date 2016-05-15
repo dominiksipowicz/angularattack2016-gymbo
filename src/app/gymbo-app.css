@@ -1,3 +1,6 @@
+header > div {
+  padding-left: 0;
+}
 .flex {
     display: -webkit-flex;
     display: flex;
