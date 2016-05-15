@@ -16,5 +16,5 @@ export class DynamicFormQuestionComponent {
   @Input() form:ControlGroup;
   @Input() submitted:boolean;
   @Output() changeTo:EventEmitter<any> = new EventEmitter();
-  get isValid() { return this.form.controls[this.question.key].valid; }
+  get isInvalid() { return !this.form.controls[this.question.key].valid && this.submitted; }
 }
