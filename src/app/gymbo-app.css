@@ -1,5 +1,5 @@
 header > div {
-  padding-left: 0;
+  padding-left: 50px;
 }
 .flex {
     display: -webkit-flex;
