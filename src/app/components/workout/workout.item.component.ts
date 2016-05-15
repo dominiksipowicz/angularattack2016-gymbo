@@ -28,12 +28,12 @@ import {Injectable} from "@angular/core";
       </md-card-header>
 
       <md-card-content>
-        <div>Exercise: {{ workoutItem.content.exercises }}</div>
-        <div>Muscle Group: {{ workoutItem.content.muscleGroups }}</div>
-        <div>Reps: {{ workoutItem.content.reps }}</div>
-        <div>Sets: {{ workoutItem.content.sets }}</div>
-        <div>Weight: {{ workoutItem.content.weight }}</div>
-        <div>Date: {{ workoutItem.createdAt | date }}</div>
+        <div><b>Exercise:</b> {{ workoutItem.content.exercises }}</div>
+        <div><b>Muscle Group:</b> {{ workoutItem.content.muscleGroups }}</div>
+        <div><b>Reps:</b> {{ workoutItem.content.reps }}</div>
+        <div><b>Sets:</b> {{ workoutItem.content.sets }}</div>
+        <div><b>Weight:</b> {{ workoutItem.content.weight }}</div>
+        <div><b>Date:</b> {{ workoutItem.createdAt | date }}</div>
       </md-card-content>
 
       <md-card-actions layout="row" 
