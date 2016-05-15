@@ -14,9 +14,12 @@ import {SignIn} from '../sign-in/sign-in';
 export class Welcome {
 
   constructor(private auth: AuthService) {}
-
-  ngOnInit() {
-
+  
+  signInWithGithub(): void {
+    console.info('signInWithGithub() start!');
+    this.auth.signInWithGithub()
+        .then((data) => {
+          console.info('signInWithGithub() successful!');
+        });
   }
-
 }
