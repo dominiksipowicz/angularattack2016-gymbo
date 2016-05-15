@@ -1,5 +1,5 @@
 <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div class="mdl-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
@@ -9,7 +9,6 @@
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation ">
         <span class="mdl-badge mdl-badge--overlap mdl-layout--large-screen-only" [(attr.data-badge)]="workoutCounter.workoutCount"></span>
-        <a class="mdl-navigation__link" [hidden]="!auth.authenticated" [routerLink]=" ['/Private', 'Add Workout'] " href="#">Add Workout</a>
         <a class="mdl-navigation__link" [routerLink]=" ['/Workout Wall'] " href="#">Workout wall</a>
       </nav>
 
@@ -27,15 +26,6 @@
 
       </div>
   </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title"><a class="mdl-navigation__link" [routerLink]="['/Welcome']">Gymbo</a></span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" [routerLink]=" ['/Welcome'] " href="#">Home</a>
-      <a class="mdl-navigation__link" [routerLink]=" ['/Private', 'Add Workout'] " [hidden]="!auth.authenticated" href="#">Add Workout</a>
-      <a class="mdl-navigation__link" [routerLink]=" ['/Workout Wall'] " href="#">Workout Wall</a>
-
-    </nav>
-  </div>
   <main class="mdl-layout__content">
     <div class="page-content">
 
