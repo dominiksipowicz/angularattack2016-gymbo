@@ -22,13 +22,30 @@ export class DynamicForm {
   payLoad = '';
   options: Observable<{}>;
   constructor(private qcs: QuestionControlService, public store: Store<[{}]>) {
-    // this.options = store.select('options');
+    let options$ = store.select('options');
+    options$.subscribe((value) => {
+      this.options = value;
+      this.form = this.qcs.toControlGroup(this.options);
+    });
   }
   changeGroup(){
     this.store.dispatch({ type: CHANGE_GROUP });
   }
   ngOnInit(){
-    this.form = this.qcs.toControlGroup(this.questions);
+    // this.form = this.qcs.toControlGroup(this.questions);
+  }
+  changeMuscleGroups(muscleGroup:any) {
+    if(
+      muscleGroup === 'legs' ||
+      muscleGroup === 'chest' ||
+      muscleGroup === 'cardio' ||
+      muscleGroup === 'shoulders' ||
+      muscleGroup === 'core' ||
+      muscleGroup === 'arms' ||
+      muscleGroup === 'back'
+    ) {
+      this.store.dispatch({ type: CHANGE_GROUP, payload: muscleGroup });
+    }
   }
   onSubmit() {
     this.createWorkout.emit(this.form.value);

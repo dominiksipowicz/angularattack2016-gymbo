@@ -10,6 +10,7 @@ import {SignOut} from './components/sign-out/sign-out';
 import {AuthService} from './common/services/auth.service';
 import {UserInfo} from './components/user-info/user-info';
 import {WorkoutService} from './components/workout/workout.service';
+import {PrivateComponent} from "./components/private/private.component";
 
 @Component({
   selector: 'gymbo-app',
@@ -20,15 +21,17 @@ import {WorkoutService} from './components/workout/workout.service';
   styleUrls: ['app/gymbo-app.css']
 })
 @RouteConfig([
-  { path: '/welcome',     component: Welcome,     name: 'Welcome', useAsDefault: true },
-  { path: '/add-workout', component: AddWorkout,  name: 'Add Workout' },
-  { path: '/workout-wall',component: WorkoutWall, name: 'Workout Wall' }
+  { path: '/welcome',     component: Welcome,          name: 'Welcome', useAsDefault: true },
+  { path: '/add-workout', component: AddWorkout,       name: 'Add Workout' },
+  { path: '/workout-wall',component: WorkoutWall,      name: 'Workout Wall' },
+  { path: '/...'         ,component: PrivateComponent, name: 'Private' }
 ])
 export class GymboApp {
 
   constructor(
     private auth: AuthService,
-    private workoutService: WorkoutService
+    private workoutService: WorkoutService,
+    private router: Router
   ) {
     console.clear();
   }
@@ -36,6 +39,7 @@ export class GymboApp {
   signOut(): void {
     console.log('Signing out');
     this.auth.signOut();
+    this.router.navigate(['/Welcome']);
   }
 
   signInWithGithub(): void {

@@ -2,6 +2,7 @@
  * Created by Marian on 14/05/2016.
  */
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { AuthProviders, FirebaseAuth, FirebaseAuthState } from 'angularfire2';
 
 @Injectable()
@@ -26,6 +27,10 @@ export class AuthService {
 
   get authenticated(): boolean {
     return this.authState !== null && !this.expired;
+  }
+
+  check() {
+    return Observable.of(this.authenticated);
   }
 
   get displayName(): string {
