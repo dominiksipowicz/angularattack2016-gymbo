@@ -18,3 +18,13 @@ header > div {
     display: flex;
     align-items: center;
 }
+
+@media only screen and (max-width: 450px) {
+    .mdl-layout--large-screen-only {
+        display: none;
+    }
+}
+
+.mdl-layout-title {
+    margin-left: -40px;
+}

@@ -17,6 +17,9 @@ import {Injectable} from "@angular/core";
     md-card-title {
       padding: 15px;
     }
+    .workout__details {
+      padding: 5px;
+    }
   `,
   ],
   template: `
@@ -27,7 +30,7 @@ import {Injectable} from "@angular/core";
           <md-card-title>{{ workoutItem.user.displayName }}</md-card-title>
       </md-card-header>
 
-      <md-card-content>
+      <md-card-content class="workout__details">
         <div><b>Exercise:</b> {{ workoutItem.content.exercises }}</div>
         <div><b>Muscle Group:</b> {{ workoutItem.content.muscleGroups }}</div>
         <div><b>Reps:</b> {{ workoutItem.content.reps }}</div>
