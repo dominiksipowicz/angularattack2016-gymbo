@@ -183,6 +183,63 @@ export const options:Reducer<{}[]> = (state:[{}], {type, payload}) => {
         options: chosenMuscleGroup.exercises
       });
 
+      if(chosenMuscleGroup.key === 'cardio') {
+        return [new SelectQuestion ({
+          label: 'Muscle Groups',
+          controlType: 'select',
+          key: 'muscleGroups',
+          required: true,
+          value: payload,
+          options: [
+            {key:'back', value:'Back'},
+            {key:'chest', value:'Chest'},
+            {key:'arms', value:'Arms'},
+            {key:'legs', value:'Legs'},
+            {key:'shoulders', value:'Shoulders'},
+            {key:'cardio', value:'Cardio'},
+            {key:'core', value:'Core'}
+          ]
+        }), exercisesSelect, new TextboxQuestion({
+          key:'minutes',
+          label:'Number of minutes:',
+          type: 'number',
+          required: true,
+          order: 3
+        })];
+      } else {
+        return [new SelectQuestion ({
+          label: 'Muscle Groups',
+          controlType: 'select',
+          key: 'muscleGroups',
+          required: true,
+          value: payload,
+          options: [
+            {key:'back', value:'Back'},
+            {key:'chest', value:'Chest'},
+            {key:'arms', value:'Arms'},
+            {key:'legs', value:'Legs'},
+            {key:'shoulders', value:'Shoulders'},
+            {key:'cardio', value:'Cardio'},
+            {key:'core', value:'Core'}
+          ]
+        }), exercisesSelect,
+          new TextboxQuestion({
+            key:'sets',
+            label:'Number of sets:',
+            type: 'number',
+            required: true,
+            order: 3
+          }),
+          new TextboxQuestion({
+            key:'reps',
+            label:'Number of reps:',
+            type: 'number',
+            required: true,
+            order: 4
+          })
+        ]
+      }
+
     return [new SelectQuestion ({
       label: 'Muscle Groups',
       controlType: 'select',
@@ -199,48 +256,6 @@ export const options:Reducer<{}[]> = (state:[{}], {type, payload}) => {
         {key:'core', value:'Core'}
       ]
     }), exercisesSelect];
-
-      // return [...state, new SelectQuestion({
-      //       label: 'Exercises',
-      //       controlType: 'select',
-      //       key: 'exercises',
-      //       options: chosenMuscleGroup.exercises
-      //     })];
-
-      //   .map(value => {
-      //   return [...state, new SelectQuestion({
-      //     label: 'Exercises',
-      //     controlType: 'select',
-      //     key: 'exercises',
-      //     options: value.exercises
-      //   })];
-      // });
-
-      // console.log([...state, new SelectQuestion({
-      //         label: 'Exercises',
-      //         controlType: 'select',
-      //         key: 'exercises',
-      //         options: 'some value'
-      //       })]);
-
-      // state.filter(value => console.log(value));
-
-      // let muscleGroup = state.filter(value => value.key === 'muscleGroups').map(value => {
-      //   return value;
-      // });
-
-      // return exercises.filter(value => {
-      //   return value.key === payload;
-      // }).map(value => {
-      //   return [
-      //     ...state,
-      //     new SelectQuestion({
-      //       label: 'Exercises',
-      //       controlType: 'select',
-      //       key: 'exercises',
-      //       options: value.exercises
-      //     })];
-      // });
 
     case CHANGE_EXERCISE:
       return state;
