@@ -30,8 +30,8 @@
     <span class="mdl-layout-title">Gymbo</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" [routerLink]=" ['/Welcome'] " href="#">Home</a>
-      <a class="mdl-navigation__link" [routerLink]=" ['/Private', 'Add Workout'] " href="#">Add Workout</a>
-      <a class="mdl-navigation__link" [routerLink]=" ['/Private', 'Workout Wall'] " href="#">Workout Wall</a>
+      <a class="mdl-navigation__link" [routerLink]=" ['/Private', 'Add Workout'] " [hidden]="!auth.authenticated" href="#">Add Workout</a>
+      <a class="mdl-navigation__link" [routerLink]=" ['/Private', 'Workout Wall'] " [hidden]="!auth.authenticated" href="#">Workout Wall</a>
 
     </nav>
   </div>

@@ -24,11 +24,9 @@ import {Injectable} from "@angular/core";
       <md-card-header>
           <img md-card-avatar [src]="auth.avatar">
           <md-card-title>{{ auth.displayName }}</md-card-title>
-          <!--<md-card-subtitle></md-card-subtitle>-->
       </md-card-header>
 
       <md-card-content>
-
         <div>Content: {{ workoutItem.content.exercises }}</div>
         <div>Muscle Groups: {{ workoutItem.content.muscleGroups }}</div>
         <div>Reps: {{ workoutItem.content.reps }}</div>
@@ -39,7 +37,6 @@ import {Injectable} from "@angular/core";
 
       <md-card-actions layout="row" layout-align="end center">
           <button md-raised-button color="warn" (click)="deleteWorkout.emit(workoutItem)">Delete</button>
-          <button md-raised-button>Details</button>
       </md-card-actions>
 
     </md-card>

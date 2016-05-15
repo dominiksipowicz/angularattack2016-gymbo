@@ -12,7 +12,7 @@ import {MdButton} from '@angular2-material/button';
         color="accent"
         (click)="signInWithGithub.emit()"
         type="button"
-        *ngIf="!authenticated">Github</button>
+        *ngIf="!authenticated">Github login</button>
   `
 })
 export class SignIn {
