@@ -4,6 +4,7 @@ import { SelectQuestion } from "./select-question";
 
 export const CHANGE_GROUP = 'CHANGE_GROUP';
 export const ADD_NEW_WORKOUT = 'ADD_NEW_WORKOUT';
+export const LOAD_EXERCISES = 'LOAD_EXERCISES';
 
 let exercises = [
   {
@@ -164,6 +165,9 @@ let exercises = [
 
 export const options:Reducer<{}[]> = (state:[{}], {type, payload}) => {
   switch (type) {
+    case LOAD_EXERCISES:
+
+
     case CHANGE_GROUP:
 
       let chosenMuscleGroup;
