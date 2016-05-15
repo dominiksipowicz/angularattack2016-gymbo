@@ -29,7 +29,11 @@ import {Injectable} from "@angular/core";
 
       <md-card-content>
 
-        <div>Content: {{ workoutItem.content }}</div>
+        <div>Content: {{ workoutItem.content.exercises }}</div>
+        <div>Muscle Groups: {{ workoutItem.content.muscleGroups }}</div>
+        <div>Reps: {{ workoutItem.content.reps }}</div>
+        <div>Sets: {{ workoutItem.content.sets }}</div>
+        <div>Weight: {{ workoutItem.content.weight }}</div>
         <div>Key: {{ workoutItem.$key }}</div>
       </md-card-content>
 

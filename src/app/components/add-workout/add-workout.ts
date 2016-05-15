@@ -30,7 +30,7 @@ export class AddWorkout {
 
   createWorkout(content): void {
     // let workoutContent = 'createWorkout() at: ' + Date.now();
-    this.workoutService.createWorkout(JSON.stringify(content));
+    this.workoutService.createWorkout(content);
   }
 
   ngOnInit() {
