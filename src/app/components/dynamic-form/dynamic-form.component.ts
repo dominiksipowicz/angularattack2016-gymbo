@@ -21,6 +21,7 @@ export class DynamicForm {
   form: ControlGroup;
   payLoad = '';
   options: Observable<{}>;
+  submitted = false;
   constructor(private qcs: QuestionControlService, public store: Store<[{}]>) {
     let options$ = store.select('options');
     options$.subscribe((value:QuestionBase<any>[]) => {
@@ -47,8 +48,13 @@ export class DynamicForm {
     }
   }
   onSubmit() {
-    this.createWorkout.emit(this.form.value);
-    this.payLoad = JSON.stringify(this.form.value);
-    this.store.dispatch({ type: ADD_NEW_WORKOUT});
+    if(this.form.valid) {
+      this.createWorkout.emit(this.form.value);
+      this.payLoad = JSON.stringify(this.form.value);
+      this.store.dispatch({ type: ADD_NEW_WORKOUT });
+      this.submitted = false;
+    } else {
+      this.submitted = true;
+    }
   }
 }

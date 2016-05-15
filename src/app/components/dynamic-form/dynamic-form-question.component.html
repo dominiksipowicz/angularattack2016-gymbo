@@ -1,10 +1,16 @@
 <div [ngFormModel]="form">
   <div [ngSwitch]="question.controlType">
-    <md-input *ngSwitchWhen="'textbox'" [ngControl]="question.key"
-              [id]="question.key" [type]="question.type"></md-input>
+    <label [attr.for]="question.key">{{question.label}}</label><br>
+    <md-input *ngSwitchWhen="'textbox'"
+              [ngControl]="question.key"
+              [id]="question.key"
+              [type]="question.type"
+              placeholder="{{question.label}}"
+    ></md-input>
     <select #select [id]="question.key" (change)="changeTo.emit(select.value)" *ngSwitchWhen="'select'" [ngControl]="question.key">
+      <option value="">Please select {{question.label.toLowerCase()}}</option>
       <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
     </select>
   </div>
-  <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
+  <div class="errorMessage" *ngIf="submitted">{{question.label}} is required</div>
 </div>
