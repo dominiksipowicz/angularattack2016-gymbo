@@ -36,6 +36,7 @@ export class AddWorkout {
   createWorkout(content): void {
     // let workoutContent = 'createWorkout() at: ' + Date.now();
     let user = {
+      uid: this.auth.id,
       avatar: this.auth.avatar,
       displayName: this.auth.displayName
     };

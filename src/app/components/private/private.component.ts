@@ -22,7 +22,6 @@ import {AddWorkout} from "../add-workout/add-workout";
     component: SecretComponent,
     name: 'Secret'
   },
-  { path: '/workout-wall',component: WorkoutWall,      name: 'Workout Wall' },
   { path: '/add-workout', component: AddWorkout,       name: 'Add Workout' },
 ])
 export class PrivateComponent {

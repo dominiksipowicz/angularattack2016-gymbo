@@ -36,8 +36,12 @@ import {Injectable} from "@angular/core";
         <div>Date: {{ workoutItem.createdAt | date }}</div>
       </md-card-content>
 
-      <md-card-actions layout="row" layout-align="end center">
-          <button md-raised-button color="warn" (click)="deleteWorkout.emit(workoutItem)">Delete</button>
+      <md-card-actions layout="row" 
+                       layout-align="end center"
+                       *ngIf="workoutItem.user.uid === auth.id">
+          <button md-raised-button 
+                  color="warn" 
+                  (click)="deleteWorkout.emit(workoutItem)">Delete</button>
       </md-card-actions>
 
     </md-card>
