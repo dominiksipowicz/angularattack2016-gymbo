@@ -3,7 +3,7 @@ import { TextboxQuestion }  from './textbox-question';
 import { SelectQuestion } from "./select-question";
 
 export const CHANGE_GROUP = 'CHANGE_GROUP';
-export const CHANGE_EXERCISE = 'CHANGE_EXERCISE';
+export const ADD_NEW_WORKOUT = 'ADD_NEW_WORKOUT';
 
 let exercises = [
   {
@@ -264,8 +264,24 @@ export const options:Reducer<{}[]> = (state:[{}], {type, payload}) => {
       ]
     }), exercisesSelect];
 
-    case CHANGE_EXERCISE:
-      return state;
+    case ADD_NEW_WORKOUT:
+      return [
+        new SelectQuestion ({
+          label: 'Muscle Groups',
+          controlType: 'select',
+          key: 'muscleGroups',
+          required: true,
+          options: [
+            {key:'back', value:'Back'},
+            {key:'chest', value:'Chest'},
+            {key:'arms', value:'Arms'},
+            {key:'legs', value:'Legs'},
+            {key:'shoulders', value:'Shoulders'},
+            {key:'cardio', value:'Cardio'},
+            {key:'core', value:'Core'}
+          ]
+        })
+      ];
 
     default:
       return state;

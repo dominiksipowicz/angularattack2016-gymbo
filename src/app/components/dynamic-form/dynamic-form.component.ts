@@ -7,7 +7,7 @@ import {MdButton} from '@angular2-material/button';
 
 import {Observable} from 'rxjs/Observable';
 import {Store} from '@ngrx/store';
-import {CHANGE_GROUP, CHANGE_EXERCISE} from '../../common/reducers/options.reducer';
+import {CHANGE_GROUP, ADD_NEW_WORKOUT} from '../../common/reducers/options.reducer';
 
 @Component({
   selector:'dynamic-form',
@@ -50,5 +50,6 @@ export class DynamicForm {
   onSubmit() {
     this.createWorkout.emit(this.form.value);
     this.payLoad = JSON.stringify(this.form.value);
+    this.store.dispatch({ type: ADD_NEW_WORKOUT});
   }
 }
