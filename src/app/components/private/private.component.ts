@@ -6,6 +6,8 @@ import {Router, ROUTER_DIRECTIVES, RouteConfig} from '@angular/router-deprecated
 import {AuthService} from '../../common/services/auth.service';
 import resolve = Promise.resolve;
 import {SecretComponent} from "../secret/secret.component";
+import {WorkoutWall} from "../workout-wall/workout-wall";
+import {AddWorkout} from "../add-workout/add-workout";
 
 @Component({
   selector: 'private',
@@ -19,7 +21,9 @@ import {SecretComponent} from "../secret/secret.component";
     path: '/secret',
     component: SecretComponent,
     name: 'Secret'
-  }
+  },
+  { path: '/workout-wall',component: WorkoutWall,      name: 'Workout Wall' },
+  { path: '/add-workout', component: AddWorkout,       name: 'Add Workout' },
 ])
 export class PrivateComponent {
   authenticated: boolean = false;
