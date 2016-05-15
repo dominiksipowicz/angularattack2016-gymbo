@@ -1,7 +1,8 @@
-<h3>Workout Wall</h3>
-
 <div>
-  <div class="workouts" *ngFor="let workoutItem of workoutItems$ | async">
+  <div class="mdl-card__title">
+    <h1 class="mdl-card__title-text">Wall of Workouts!</h1>
+  </div>
+  <div *ngFor="let workoutItem of workoutItems$ | async">
     <workout-item [workoutItem]="workoutItem"
                   (deleteWorkout)="deleteWorkout(workoutItem)"></workout-item>
   </div>
